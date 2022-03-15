@@ -1,6 +1,5 @@
 from urllib import request
 from django.shortcuts import render
-from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Q
 
 from rest_framework import viewsets
