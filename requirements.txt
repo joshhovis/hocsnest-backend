@@ -18,7 +18,7 @@ dj-database-url==0.5.0
 Django==2.2.27
 django-cors-headers==3.11.0
 django-csp==3.7
-django-filter==21.1
+django-filter==2.2.27
 django-taggit==1.2.0
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.1.0
