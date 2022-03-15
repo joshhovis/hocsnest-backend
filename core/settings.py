@@ -162,7 +162,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend-hocsnest.herokuapp.com']
 
 CORS_ORIGIN_WHITELIST = [
         "https://localhost:3000",
-        "https://backend-hocsnest.herokuapp",
+        "https://hocsnest.herokuapp",
     ]
 
 
