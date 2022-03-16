@@ -158,12 +158,12 @@ CHANNEL_LAYERS = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend-hocsnest.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hocsnest-django-backend.herokuapp.com']
 
 CORS_ORIGIN_WHITELIST = [
         "https://localhost:3000",
         "https://hocsnest.herokuapp.com",
-        "https://backend-hocsnest.herokuapp.com",
+        "https://hocsnest-django-backend.herokuapp.com",
     ]
 
 
