@@ -10,4 +10,4 @@ application = get_asgi_application()
 
 #django.setup()
 
-#application = get_default_application
+application = get_default_application
