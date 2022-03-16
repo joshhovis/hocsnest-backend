@@ -13,7 +13,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('chat/', include('chat.urls')),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/obtain/', views.ObtainNewUserToken.as_view(), name='token_create'),
+    path('api/token/obtain/', views.ObtainNewUserToken.as_view(), name='token_create'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('api/user/', include('users.urls', namespace='users')),
 ]

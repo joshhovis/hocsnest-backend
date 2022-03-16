@@ -9,6 +9,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
 from .models import NewUser
 from .serializers import MyTokenObtainPairSerializer
+from django.contrib.auth import get_user_model
+from channels.db import database_sync_to_async
 
 class ObtainTokenPairWithColorView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -41,13 +43,20 @@ class LogoutAndBlacklistRefreshTokenForUserView(APIView):
 
 
 class ObtainNewUserToken(APIView):
-    def get_tokens_for_user(user):
-        refresh = RefreshToken.for_user(user)
+    create_user_token = {}
 
-        return {
+    @database_sync_to_async
+    def get_tokens_for_user(self, user_id):
+        user_id = 1
+        try:
+            refresh = RefreshToken.for_user(get_user_model().objects.get(id=user_id))
+            return {
             'refresh': str(refresh),
             'access': str(refresh.access_token),
         }
+        except get_user_model().DoesNotExist:
+            print('error')
+
 
 
 
