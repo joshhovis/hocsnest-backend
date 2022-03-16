@@ -6,7 +6,7 @@ app_name = 'users'
 
 urlpatterns = [
     path('register/', CustomUserCreate.as_view(), name="create_user"),
-    path('token/obtain/', ObtainTokenPairWithColorView.as_view(), name='token_create'),
+    path('token/obtain/', jwt_views.TokenObtainPairView.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('logout/blacklist/', LogoutAndBlacklistRefreshTokenForUserView.as_view(), name='blacklist')
 ]
