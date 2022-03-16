@@ -7,14 +7,11 @@ from chat import views
 router = routers.DefaultRouter()
 router.register(r'messages', views.MessageView, 'chat')
 
-from users import views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('chat/', include('chat.urls')),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/obtain/', views.ObtainNewUserToken.as_view(), name='token_create'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('api/user/', include('users.urls', namespace='users')),
 ]
